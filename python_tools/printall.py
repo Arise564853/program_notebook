@@ -17,3 +17,7 @@ def printer_loading(filenames):
         0
     )
     # 调用默认打印机
+
+
+if __name__ == "__main__":
+    print("fuck")
