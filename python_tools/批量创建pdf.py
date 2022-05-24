@@ -3,10 +3,11 @@ import os
 
 
 os.chdir(r'F:\官网上传报告扫描件')
-排除文件夹 = ['履带吊', '汽车吊', '桩机', '桥门机']
+ignore_folders = ['履带吊', '汽车吊', '桩机', '桥门机']
 for dirs in os.listdir():
-    if not dirs.endswith(".jpg"):
-        if dirs not in 排除文件夹:
+    if os.path.isdir(dirs):
+        if dirs not in ignore_folders:
             os.chdir(f'F:/官网上传报告扫描件/{dirs}')
-            makepdf(f'F:/官网上传报告扫描件/{dirs}.pdf', os.listdir())
-            makepdf(f'{dirs}.pdf', os.listdir())
+            pics = filter(lambda pic: pic.endswith('.jpg'), list(os.listdir()))
+            makepdf(f'F:/官网上传报告扫描件/{dirs}.pdf', pics)
+            makepdf(f'{dirs}.pdf', pics)
