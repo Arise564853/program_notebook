@@ -2,9 +2,13 @@ import os
 
 
 os.chdir(r"F:\官网上传报告扫描件")
-i = 435
-for file in os.listdir():
-    if file.endswith(".jpg"):
-        newname = str(i)+'.jpg'
-        os.rename(file, newname)
-        i += 1
+try:
+    i = int(input("输入开始编号"))
+except Exception as error_message:
+    print(f'{error_message}')
+else:
+    for file in os.listdir():
+        if file.endswith(".jpg"):
+            newname = str(i)+'.jpg'
+            os.rename(file, newname)
+            i += 1
