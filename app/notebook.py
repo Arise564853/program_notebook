@@ -19,6 +19,10 @@ def writeData(userData):
         json.dump(userData, f, ensure_ascii=False)
         sg.popup('账单录入成功！')
 
+def delData():
+    """删除数据"""
+    pass
+
 
 def showData():
     data = readData()
@@ -75,7 +79,7 @@ def main():
 
     window = sg.Window('记账本', layout)
     while True:
-        event,values = window.read()
+        event, values = window.read()
         if event == "确认提交":
             content = values["-content-"]
             amount = float(values["-amount-"])
