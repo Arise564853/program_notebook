@@ -17,7 +17,7 @@ else:
         os.chdir(folderPath)
         for i in range(printNum):
             for file in os.listdir():
-                if file.endswith(('.docx', '.doc')):
+                if file.endswith(('合格证.docx', '合格证.doc')):
                     printer_loading(file)
                     time.sleep(5)
 
