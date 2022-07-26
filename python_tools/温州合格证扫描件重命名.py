@@ -9,6 +9,6 @@ except Exception as error_message:
 else:
     for file in os.listdir():
         if file.endswith(".jpg"):
-            newname = str(i)+'.jpg'
+            newname = "ZJW20220" + str(i) + 'ZJ.jpg'
             os.rename(file, newname)
             i += 1
